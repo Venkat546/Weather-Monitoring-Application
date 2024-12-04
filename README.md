@@ -38,7 +38,6 @@ This is a Spring Boot application that monitors weather conditions in multiple c
     - Make sure to replace the API key in the `application.properties` file.
     - You can add your cities to the `weather.api.cities` property in `application.properties` as a comma-separated list.
 
-   
     ```properties
     weather.api.base-url=https://api.openweathermap.org/data/2.5/weather
     weather.api.key=1baffee776ffba73a46ec877ce9fef94
@@ -70,7 +69,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 - **Response**:
     Returns the weather data for the requested city, including:
     - Temperature in Celsius.
-    - Weather condition (e.g., Clear, Rain).
+    - Weather conditions (e.g., Clear, Rain).
     - Temperature alerts (high/low).
     - Weather condition alerts (Rain, Clear, Haze).
 
@@ -86,8 +85,6 @@ This file contains the necessary configuration for the application.
 - `weather.api.key`: Your API key from OpenWeatherMap.
 - `weather.api.cities`: Comma-separated list of cities to monitor.
 - Database configuration for H2 in-memory database.
-  
-=
 
 ```properties
 weather.api.base-url=https://api.openweathermap.org/data/2.5/weather
