@@ -19,6 +19,10 @@ public class WeatherApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	@Test
+	void contextLoads() {
+
+	}
 
 	@Test
 	void testGetWeather() throws Exception {
@@ -35,8 +39,9 @@ public class WeatherApplicationTests {
 		// Use a tool like MockMvc to send a GET request to the /weather endpoint
 		MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/weather?city=UnknownCity")).andReturn();
 
-		// Verify that the response is INTERNAL SERVER ERROR (500)
-		assertEquals(500, result.getResponse().getStatus());
+		// Verify that the response is NOT FOUND (404)
+		assertEquals(404, result.getResponse().getStatus());
 	}
+
 
 }

@@ -102,20 +102,20 @@ public class WeatherService {
             return;
         }
 
-        double totalTemp = 0;
-        double maxTemp = Double.MIN_VALUE;
-        double minTemp = Double.MAX_VALUE;
+        double sumTemp = 0;
+        double maxTemp = dailyData.get(0).getTemp();
+        double minTemp = dailyData.get(0).getTemp();
         Map<String, Integer> weatherConditionCount = new HashMap<>();
 
         for (WeatherData data : dailyData) {
-            totalTemp += data.getTemp();
+            sumTemp += data.getTemp();
             maxTemp = Math.max(maxTemp, data.getTemp());
             minTemp = Math.min(minTemp, data.getTemp());
 
             weatherConditionCount.put(data.getMain(), weatherConditionCount.getOrDefault(data.getMain(), 0) + 1);
         }
 
-        double averageTemp = totalTemp / dailyData.size();
+        double averageTemp = sumTemp / dailyData.size();
         String dominantCondition = weatherConditionCount.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
@@ -128,7 +128,8 @@ public class WeatherService {
         System.out.println("Dominant Weather: " + dominantCondition);
     }
 
-    @Scheduled(fixedRate = 300000) // Every 5 minutes
+
+    @Scheduled(fixedRate = 300000) // Every 5 minute
     public void fetchWeatherUpdates() {
         for (String city : cityList) {
             try {
@@ -144,6 +145,8 @@ public class WeatherService {
                 System.err.println("Failed to process weather data for city: " + city);
                 e.printStackTrace();
             }
+
+
         }
     }
 }
