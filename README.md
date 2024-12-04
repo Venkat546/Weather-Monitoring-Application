@@ -30,7 +30,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-repo/WeatherApplication.git
+    git clone https://github.com/Venkat546/Weather-Monitoring-Application.git
     cd WeatherApplication
     ```
 
