@@ -2,6 +2,7 @@
 
 This is a Spring Boot application that monitors weather conditions in multiple cities, fetches weather data from the OpenWeatherMap API, stores it in an H2 database, and provides real-time alerts for temperature and weather conditions. The application calculates daily summaries of weather data and alerts users about extreme temperatures or conditions such as rain or haze.
 
+
 ## Features
 - Fetches real-time weather data for multiple cities.
 - Provides detailed weather data (temperature, weather condition, etc.).
@@ -9,6 +10,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 - Scheduled fetching of weather data every 5 minutes.
 - Daily weather summaries for each city.
 - Data persistence with H2 database.
+
 
 ## Technologies Used
 - Java
@@ -18,6 +20,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 - OpenWeatherMap API
 - RESTful API
 - JSON Processing (using `org.json.JSONObject`)
+
 
 ## Installation
 
@@ -48,8 +51,11 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 
 To run the Spring Boot application, use the following command:
 
-mvn spring-boot:run
+```mvn spring-boot:run```
+
+
 The application will start on port 8080 by default.
+
 
 ## Dockerization
 1. **Build the Docker image**:
@@ -74,6 +80,8 @@ By default, the application uses an in-memory H2 database. To persist data, inte
 - Update the application.properties file with the MySQL configuration.
 - Include MySQL as a service in a docker-compose.yml file for multi-container setup.
 
+
+
 ## API Endpoints
 
 ### 1. Get Current Weather Data
@@ -97,6 +105,8 @@ By default, the application uses an in-memory H2 database. To persist data, inte
 
 ### 2. Fetch Weather Updates (Scheduled Task)
 This operation runs every 5 minutes to fetch weather data for the configured cities and store it in the database.
+
+
 
 ## Configuration
 
