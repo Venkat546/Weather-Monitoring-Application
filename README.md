@@ -44,13 +44,35 @@ This is a Spring Boot application that monitors weather conditions in multiple c
     weather.api.cities=Delhi,Mumbai,Chennai,Bangalore,Kolkata,Hyderabad
     ```
 
-3. **Run the application**:
-    To run the Spring Boot application, use the following command:
-    ```bash
-    mvn spring-boot:run
-    ```
+3. **Run the application locally**:
 
-    The application will start on port `8080` by default.
+To run the Spring Boot application, use the following command:
+
+mvn spring-boot:run
+The application will start on port 8080 by default.
+
+## Dockerization
+1. **Build the Docker image**:
+
+Ensure Docker is installed and running on your system. Use the following command to build the Docker image:
+
+```docker build -t weather-monitoring-app .```
+
+
+2. **Run the Docker container**:
+
+Start a container from the built image:
+
+```docker run -d -p 8080:8080 --name weather-app weather-monitoring-app```
+
+The application will now be accessible at http://localhost:8080.
+
+3. Using a Persistent Database (Optional):
+
+By default, the application uses an in-memory H2 database. To persist data, integrate an external database like MySQL:  
+
+- Update the application.properties file with the MySQL configuration.
+- Include MySQL as a service in a docker-compose.yml file for multi-container setup.
 
 ## API Endpoints
 
