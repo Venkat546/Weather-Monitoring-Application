@@ -20,6 +20,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 - OpenWeatherMap API
 - RESTful API
 - JSON Processing (using `org.json.JSONObject`)
+- Docker
 
 
 ## Installation
@@ -28,6 +29,7 @@ This is a Spring Boot application that monitors weather conditions in multiple c
 - Java 23
 - Maven
 - Spring Boot
+- Docker
 
 ### Setup
 
